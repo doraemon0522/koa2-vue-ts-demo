@@ -83,9 +83,9 @@ let webpackConfig = {
     new VueLoader(),
 
     // 输出 index.html 到 output
-    // new HtmlwebpackPlugin({
-    //   template: resolvePath('index.html')
-    // })
+    new HtmlwebpackPlugin({
+      template: resolvePath('index.html')
+    })
   ],
   optimization: {
     splitChunks: {
