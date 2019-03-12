@@ -34,13 +34,24 @@ let webpackConfig = {
         loader: 'vue-loader'
       },
       {
-        test: /\.ts$/,
-        loader: 'ts-loader',
+        test: /\.tsx?$/,
+        enforce: 'pre',
+        // loader: 'ts-loader',
         exclude: /node_modules/,
-        options: {
-          transpileOnly: true,
-          appendTsSuffixTo: [/.vue$/]
-        }
+        use: [
+          "babel-loader",
+          {
+            loader: "ts-loader",
+            options: { 
+              transpileOnly: true,
+              appendTsxSuffixTo: [/\.vue$/] 
+            }
+          }
+        ]
+        // options: {
+        //   transpileOnly: true,
+        //   appendTsSuffixTo: [/\.vue$/]
+        // }
       },
       {
         test: /\.js?$/,
