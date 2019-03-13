@@ -29,10 +29,12 @@ let webpackConfig = {
   },
   module: {
     rules: [
+      /**vue loader，用于加载.vue文件，分离style、template、script等元素内容 */
       {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
+      /**加载ts文件，并为vue文件添加后缀 */
       {
         test: /\.ts$/,
         loader: 'ts-loader',
