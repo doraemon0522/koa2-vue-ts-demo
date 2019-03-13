@@ -44,9 +44,16 @@ let webpackConfig = {
           appendTsSuffixTo: [/\.vue$/]
         }
       },
+      /** query: 为webpack4配置loader */
       {
         test: /\.(js?|ts)$/,
         loader: 'babel-loader',
+        query: {
+          plugins: [
+              "@babel/plugin-syntax-dynamic-import",
+              [require('@babel/plugin-proposal-decorators'), { decoratorsBeforeExport: false }]
+          ]
+        },
         exclude: file => (
           /node_modules/.test(file) && !/\.vue\.js/.test(file)
         )
