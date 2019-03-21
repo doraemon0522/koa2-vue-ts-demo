@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "nodemon -e js --ignore vue/ index.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config vue/webpack.config.js",
-    "start": "node index.prod.js"
+    "start": "node index.prod.js",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "debug": "^2.6.3",
